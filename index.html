@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>BillnaroX</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
+<section id="login" class="screen active">
+
+  <div class="login-card">
+
+    <img
+      src="logo.png"
+      class="login-logo"
+      alt="BillnaroX Logo"
+      onerror="this.style.display='none'"
+    >
+
+    <h1>BillnaroX</h1>
+
+    <p class="subtitle">
+      Simple Billing & Customer Management
+    </p>
+
+    <input
+      id="email"
+      type="email"
+      placeholder="Email"
+      autocomplete="email"
+    >
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Password"
+      autocomplete="current-password"
+    >
+
+    <button class="primary-btn" id="signupBtn">
+      Sign Up
+    </button>
+
+    <button class="primary-btn" id="loginBtn">
+      Login
+    </button>
+
+    <div class="or">
+      <span>OR</span>
+    </div>
+
+    <button class="google-btn" id="googleBtn">
+      <b>G</b>
+      Login with Google
+    </button>
+
+    <p id="authMessage" class="message"></p>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     SHOP SETUP
+===================================================== -->
+
+<section id="setup" class="screen">
+
+  <div class="setup-card">
+
+    <img
+      src="logo.png"
+      class="setup-logo"
+      alt="BillnaroX"
+      onerror="this.style.display='none'"
+    >
+
+    <h2>Shop Setup</h2>
+
+    <p class="small-text">
+      Enter your shop details
+    </p>
+
+    <input
+      id="shopName"
+      type="text"
+      placeholder="Shop Name"
+    >
+
+    <input
+      id="shopPhone"
+      type="tel"
+      placeholder="Phone Number"
+    >
+
+    <textarea
+      id="shopAddress"
+      placeholder="Shop Address"
+    ></textarea>
+
+    <label class="file-label">
+      Shop Invoice Logo
+
+      <input
+        type="file"
+        id="shopLogo"
+        accept="image/png,image/jpeg,image/webp"
+      >
+    </label>
+
+    <img
+      id="logoPreview"
+      class="logo-preview"
+      alt="Logo Preview"
+    >
+
+    <p id="logoStatus" class="small-text"></p>
+
+    <button class="primary-btn" id="saveShopBtn">
+      Save Shop
+    </button>
+
+    <button class="secondary-btn" id="logoutSetupBtn">
+      Logout
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     HOME / CUSTOMERS
+===================================================== -->
+
+<section id="home" class="screen">
+
+  <header class="header">
+
+    <div>
+
+      <h2>Customers</h2>
+
+      <small id="homeShopName">
+        BillnaroX
+      </small>
+
+    </div>
+
+    <button
+      id="shopMenuBtn"
+      class="menu-btn"
+      title="Shop Settings"
+    >
+      ⚙
+    </button>
+
+  </header>
+
+  <main id="customerList">
+
+    <div class="empty" id="emptyMessage">
+      No customers yet.
+      <br>
+      Tap + to add a customer.
+    </div>
+
+  </main>
+
+  <button
+    class="add-btn"
+    id="addCustomerBtn"
+    title="Add Customer"
+  >
+    +
+  </button>
+
+</section>
+
+
+<!-- =====================================================
+     CUSTOMER MODAL
+===================================================== -->
+
+<div id="customerModal" class="modal">
+
+  <div class="modal-card">
+
+    <button
+      class="close-btn"
+      id="closeCustomerModal"
+    >
+      ×
+    </button>
+
+    <h2>Add Customer</h2>
+
+    <input
+      id="customerName"
+      type="text"
+      placeholder="Customer Name"
+    >
+
+    <input
+      id="customerPhone"
+      type="tel"
+      placeholder="Customer Phone"
+    >
+
+    <textarea
+      id="customerAddress"
+      placeholder="Customer Address"
+    ></textarea>
+
+    <button
+      class="primary-btn"
+      id="saveCustomerBtn"
+    >
+      Save Customer
+    </button>
+
+    <p
+      id="customerMessage"
+      class="message"
+    ></p>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     INVOICE
+===================================================== -->
+
+<section id="invoice" class="screen">
+
+  <div class="invoice-header">
+
+    <button id="backInvoiceBtn">
+      ← Back
+    </button>
+
+    <h3>Invoice</h3>
+
+    <button id="printBtn">
+      🖨 Print
+    </button>
+
+  </div>
+
+
+  <div class="bill">
+
+    <div class="shop-header">
+
+      <img
+        id="invoiceLogo"
+        class="invoice-logo"
+        alt="Shop Logo"
+      >
+
+      <div>
+
+        <h2 id="sName">
+          Shop Name
+        </h2>
+
+        <p id="sPhone"></p>
+
+        <p id="sAddress"></p>
+
+      </div>
+
+    </div>
+
+
+    <hr>
+
+
+    <div class="invoice-info">
+
+      <div>
+
+        <b>Bill To</b>
+
+        <p id="cName"></p>
+
+        <p id="cPhone"></p>
+
+        <p id="cAddress"></p>
+
+      </div>
+
+      <div class="invoice-number">
+
+        <b>Invoice No</b>
+
+        <p id="invNo"></p>
+
+        <b>Date</b>
+
+        <p id="invoiceDate"></p>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+         INVOICE ENTRY TABLE
+    ================================================== -->
+
+    <div class="table-container">
+
+      <table>
+
+        <thead>
+
+          <tr>
+            <th>S.No</th>
+            <th>Date</th>
+            <th>Particulars</th>
+            <th>Amount</th>
+            <th>Paid</th>
+            <th>Balance</th>
+            <th>Action</th>
+          </tr>
+
+        </thead>
+
+        <tbody id="tableBody"></tbody>
+
+      </table>
+
+    </div>
+
+
+    <button
+      class="primary-btn"
+      id="addRowBtn"
+    >
+      + Add Row
+    </button>
+
+
+    <div class="total-box">
+
+      <b>Total Balance</b>
+
+      <strong>
+        ₹<span id="total">0.00</span>
+      </strong>
+
+    </div>
+
+
+    <button
+      class="save-invoice-btn"
+      id="saveInvoiceBtn"
+    >
+      💾 Save Invoice
+    </button>
+
+  </div>
+
+</section>
+
+
+<script type="module" src="script.js"></script>
+
+</body>
+</html>

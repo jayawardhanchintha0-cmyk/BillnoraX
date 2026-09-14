@@ -1,0 +1,715 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #eef3f9;
+  color: #111827;
+}
+
+
+/* =====================================================
+   SCREEN
+===================================================== */
+
+.screen {
+  display: none;
+  min-height: 100vh;
+}
+
+.screen.active {
+  display: block;
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+#login {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 30px 15px;
+}
+
+#login.active {
+  display: flex;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 675px;
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.login-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 25px;
+  margin-bottom: 15px;
+}
+
+.login-card h1 {
+  margin: 5px 0;
+  font-size: 42px;
+  color: #111827;
+}
+
+.subtitle {
+  color: #64748b;
+  margin-bottom: 35px;
+  font-size: 18px;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
+
+input,
+textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 8px 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 16px;
+  outline: none;
+  background: #f8fafc;
+  font-family: inherit;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #2563eb;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 12px;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.primary-btn:hover {
+  background: #1d4ed8;
+}
+
+.secondary-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  background: #e2e8f0;
+  color: #334155;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.secondary-btn:hover {
+  background: #cbd5e1;
+}
+
+.google-btn {
+  width: 100%;
+  padding: 15px;
+  background: white;
+  color: #111827;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.google-btn:hover {
+  background: #f8fafc;
+}
+
+.google-btn b {
+  margin-right: 12px;
+  font-size: 20px;
+}
+
+
+/* =====================================================
+   OR
+===================================================== */
+
+.or {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 25px 0;
+  color: #94a3b8;
+}
+
+.or::before,
+.or::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message {
+  margin-top: 20px;
+  color: #16a34a;
+  font-weight: 600;
+  min-height: 20px;
+}
+
+.message.error {
+  color: #dc2626;
+}
+
+
+/* =====================================================
+   SHOP SETUP
+===================================================== */
+
+#setup {
+  padding: 30px 15px;
+}
+
+.setup-card {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  margin: auto;
+  padding: 35px;
+  border-radius: 25px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+}
+
+.setup-card h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.small-text {
+  text-align: center;
+  color: #64748b;
+}
+
+.setup-logo {
+  display: block;
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  margin: auto;
+  border-radius: 20px;
+}
+
+.file-label {
+  display: block;
+  margin-top: 18px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.file-label input {
+  margin-top: 10px;
+  padding: 10px;
+  background: white;
+}
+
+.logo-preview {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 15px auto;
+  display: none;
+  border-radius: 15px;
+  border: 1px solid #e2e8f0;
+  background: white;
+}
+
+#logoStatus {
+  min-height: 20px;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.header {
+  background: #0f172a;
+  color: white;
+  padding: 18px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.header small {
+  color: #cbd5e1;
+}
+
+.menu-btn {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 25px;
+  padding: 8px 12px;
+}
+
+
+/* =====================================================
+   CUSTOMER
+===================================================== */
+
+#customerList {
+  padding-bottom: 110px;
+}
+
+.customer {
+  display: flex;
+  align-items: center;
+  background: white;
+  margin: 12px;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.customer:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.customer-name {
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.customer-phone {
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.customer-address {
+  color: #94a3b8;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.empty {
+  text-align: center;
+  color: #64748b;
+  margin-top: 100px;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   ADD BUTTON
+===================================================== */
+
+.add-btn {
+  position: fixed;
+  right: 25px;
+  bottom: 30px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: none;
+  background: #22c55e;
+  color: white;
+  font-size: 38px;
+  line-height: 1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+}
+
+.add-btn:hover {
+  background: #16a34a;
+  transform: scale(1.05);
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+.modal-card h2 {
+  margin-top: 0;
+}
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  border-radius: 50%;
+  background: #f1f5f9;
+  font-size: 28px;
+  color: #334155;
+}
+
+
+/* =====================================================
+   INVOICE HEADER
+===================================================== */
+
+.invoice-header {
+  height: 65px;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.invoice-header h3 {
+  margin: 0;
+}
+
+.invoice-header button {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+}
+
+
+/* =====================================================
+   BILL
+===================================================== */
+
+.bill {
+  max-width: 1100px;
+  margin: 20px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.shop-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.invoice-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  display: none;
+  border-radius: 12px;
+}
+
+.shop-header h2 {
+  margin: 0 0 5px;
+}
+
+.shop-header p {
+  margin: 3px 0;
+  color: #64748b;
+}
+
+.invoice-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.invoice-info p {
+  margin: 5px 0;
+}
+
+.invoice-number {
+  text-align: right;
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  min-width: 780px;
+}
+
+th {
+  background: #e2e8f0;
+  font-weight: 600;
+}
+
+th,
+td {
+  border: 1px solid #cbd5e1;
+  padding: 8px;
+  text-align: center;
+}
+
+td input {
+  margin: 0;
+  padding: 8px;
+  min-width: 90px;
+}
+
+
+/*
+  IMPORTANT:
+  Keep invoice inputs stable while typing.
+*/
+
+td input[type="number"] {
+  width: 120px;
+}
+
+td input[type="text"] {
+  width: 180px;
+}
+
+td input[type="date"] {
+  width: 145px;
+}
+
+.delete-row {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 10px;
+}
+
+.delete-row:hover {
+  background: #dc2626;
+}
+
+
+/* =====================================================
+   TOTAL
+===================================================== */
+
+.total-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #eff6ff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 20px;
+}
+
+.total-box strong {
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   SAVE INVOICE
+===================================================== */
+
+.save-invoice-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 15px;
+  background: #16a34a;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.save-invoice-btn:hover {
+  background: #15803d;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .login-card,
+  .setup-card {
+    padding: 25px 20px;
+  }
+
+  .login-logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .login-card h1 {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .bill {
+    margin: 10px;
+    padding: 15px;
+  }
+
+  .shop-header {
+    align-items: flex-start;
+  }
+
+  .invoice-logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  .invoice-info {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .invoice-number {
+    text-align: left;
+  }
+
+  .add-btn {
+    width: 60px;
+    height: 60px;
+    right: 18px;
+    bottom: 20px;
+  }
+
+}
+
+
+/* =====================================================
+   PRINT
+===================================================== */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  .invoice-header,
+  #addRowBtn,
+  #saveInvoiceBtn,
+  .delete-row {
+    display: none !important;
+  }
+
+  .bill {
+    box-shadow: none;
+    margin: 0;
+    max-width: none;
+    border-radius: 0;
+  }
+
+  .invoice-logo {
+    display: block !important;
+  }
+
+}
